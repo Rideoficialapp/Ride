@@ -71,8 +71,7 @@ header.header {
 
 .hero-video {
   position: absolute;
-  top: 0; 
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Rellenar contenedor sin distorsionar */
@@ -81,18 +80,14 @@ header.header {
 
 .hero-overlay {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0,0,0,0.3); /* Overlay tenue */
   z-index: 2;
 }
 
 .hero-content {
   position: absolute; /* Para centrar completamente */
-  top: 50%; 
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
@@ -410,7 +405,6 @@ header.header {
 /* ----------------------------------------------------
    PASSENGERS (passengers.html)
 ---------------------------------------------------- */
-/* Sección Héroe Pasajeros */
 .passengers-hero {
   background-color: #f2f2f2;
   padding: 80px 20px;
@@ -636,4 +630,90 @@ header.header {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE: MEDIA QUERIES
+---------------------------------------------------- */
+/* Tablet y móviles (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Ajustamos la altura del hero */
+  .hero {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Cards en una columna */
+  .pricing-cards,
+  .plans-details,
+  .benefits-grid,
+  .payments-grid,
+  .steps-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-plan,
+  .plan-detail,
+  .benefit,
+  .payment-method,
+  .step {
+    width: 90% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Drivers hero spacing */
+  .drivers-hero {
+    padding: 40px 20px;
+  }
+  .drivers-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  /* Passengers hero spacing */
+  .passengers-hero {
+    padding: 40px 20px;
+  }
+  .passengers-hero h1 {
+    font-size: 2rem;
+  }
+  .passengers-hero p {
+    font-size: 1rem;
+  }
+
+  /* Purchase form */
+  .purchase-section {
+    padding: 40px 20px;
+  }
+  .purchase-section h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Móviles muy pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .drivers-hero h1,
+  .passengers-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Tamaños de letra globales un poco reducidos */
+  body {
+    font-size: 0.95rem;
+  }
 }
