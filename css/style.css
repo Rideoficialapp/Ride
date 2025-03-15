@@ -36,8 +36,6 @@ header.header {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
@@ -45,7 +43,6 @@ header.header {
   font-weight: 500;
 }
 
-/* Botón de compra en header */
 .btn-buy {
   background-color: #fff;
   color: #000;
@@ -53,7 +50,6 @@ header.header {
   border-radius: 4px;
 }
 
-/* Link activo subrayado */
 .nav-links .active-link {
   text-decoration: underline;
 }
@@ -65,39 +61,42 @@ header.header {
 .hero {
   position: relative;
   width: 100%;
-  height: 70vh; /* Ajusta la altura de la sección héroe */
+  min-height: 60vh; /* Reemplaza height fija por min-height */
   overflow: hidden;
 }
 
 .hero-video {
   position: absolute;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Rellenar contenedor sin distorsionar */
+  object-fit: cover; 
   z-index: 1;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0,0,0,0.3); /* Overlay tenue */
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
   z-index: 2;
 }
 
 .hero-content {
-  position: absolute; /* Para centrar completamente */
-  top: 50%; left: 50%;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
   color: #fff;
-
-  /* Fondo semitransparente para el texto */
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente texto */
   padding: 20px 30px;
   border-radius: 8px;
-  max-width: 600px; /* Limitar ancho del texto */
+  max-width: 600px;
 }
 
 .hero-content h1 {
@@ -614,12 +613,11 @@ header.header {
   background-color: #000;
   color: #fff;
   padding: 20px 0;
+  text-align: center;
 }
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .footer-nav {
@@ -633,13 +631,13 @@ header.header {
 }
 
 /* ----------------------------------------------------
-   RESPONSIVE: MEDIA QUERIES
+   MEDIA QUERIES (RESPONSIVE)
 ---------------------------------------------------- */
 /* Tablet y móviles (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Ajustamos la altura del hero */
+  /* Hero -> Ajustar min-height */
   .hero {
-    height: 50vh;
+    min-height: 50vh; 
   }
   .hero-content h1 {
     font-size: 2rem;
@@ -648,7 +646,7 @@ header.header {
     font-size: 1rem;
   }
 
-  /* Cards en una columna */
+  /* Pricing cards, plan details, benefits, etc. -> 1 columna */
   .pricing-cards,
   .plans-details,
   .benefits-grid,
@@ -657,7 +655,6 @@ header.header {
     flex-direction: column;
     align-items: center;
   }
-
   .card-plan,
   .plan-detail,
   .benefit,
@@ -666,39 +663,12 @@ header.header {
     width: 90% !important;
     margin-bottom: 20px;
   }
-
-  /* Drivers hero spacing */
-  .drivers-hero {
-    padding: 40px 20px;
-  }
-  .drivers-hero-content h1 {
-    font-size: 2rem;
-  }
-
-  /* Passengers hero spacing */
-  .passengers-hero {
-    padding: 40px 20px;
-  }
-  .passengers-hero h1 {
-    font-size: 2rem;
-  }
-  .passengers-hero p {
-    font-size: 1rem;
-  }
-
-  /* Purchase form */
-  .purchase-section {
-    padding: 40px 20px;
-  }
-  .purchase-section h1 {
-    font-size: 1.8rem;
-  }
 }
 
 /* Móviles muy pequeños (max-width: 480px) */
 @media (max-width: 480px) {
   .hero {
-    height: 40vh;
+    min-height: 40vh;
   }
   .hero-content h1 {
     font-size: 1.8rem;
@@ -706,13 +676,6 @@ header.header {
   .hero-content p {
     font-size: 0.9rem;
   }
-
-  .drivers-hero h1,
-  .passengers-hero h1 {
-    font-size: 1.8rem;
-  }
-
-  /* Tamaños de letra globales un poco reducidos */
   body {
     font-size: 0.95rem;
   }
