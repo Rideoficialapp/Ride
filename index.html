@@ -2,26 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ride - Conectando tu Ciudad</title>
 
-  <!-- Fuente minimalista (Montserrat) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fuentes y CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Tu hoja de estilo principal -->
-  <link rel="stylesheet" href="css/style.css" />
+    rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <!-- HEADER SIN LOGO -->
+  <!-- HEADER -->
   <header class="header">
     <nav class="navbar">
       <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="#" class="active-link">Inicio</a></li>
         <li><a href="drivers.html">Socios Conductores</a></li>
         <li><a href="passengers.html">Pasajeros</a></li>
         <li><a href="planes.html">Planes</a></li>
@@ -30,7 +27,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION CON VIDEO -->
+  <!-- HERO SECTION: VIDEO + TEXTO -->
   <section class="hero">
     <!-- Video de fondo -->
     <video
@@ -42,18 +39,21 @@
       playsinline
     ></video>
 
-    <!-- Overlay ligero para oscurecer un poco todo el fondo -->
+    <!-- Capa oscura ligera -->
     <div class="hero-overlay"></div>
 
-    <!-- Contenido centrado con fondo semitransparente -->
+    <!-- Contenido central -->
     <div class="hero-content">
       <h1>Lo mejor de Ride para tu negocio</h1>
-      <p>Convierte tu auto en una fuente de ingresos sin comisiones excesivas.</p>
+      <p>
+        Convierte tu auto en una fuente de ingresos sin comisiones excesivas.
+      </p>
+      <!-- Botón principal (opcional) -->
       <a href="drivers.html" class="btn-primary">Únete como Conductor</a>
     </div>
   </section>
 
-  <!-- PRICING SECTION (Planes) -->
+  <!-- SECCIÓN DE PLANES EN INDEX -->
   <section class="pricing">
     <h2>Nuestros Planes</h2>
     <p>Elige el que mejor se adapte a tus necesidades</p>
@@ -70,7 +70,6 @@
         </ul>
         <a href="compra.html?plan=basic" class="btn-plan">Comprar</a>
       </div>
-
       <!-- Plan Intermedio -->
       <div class="card-plan">
         <h3>Intermedio</h3>
@@ -82,7 +81,6 @@
         </ul>
         <a href="compra.html?plan=intermediate" class="btn-plan">Comprar</a>
       </div>
-
       <!-- Plan Premium -->
       <div class="card-plan">
         <h3>Premium</h3>
