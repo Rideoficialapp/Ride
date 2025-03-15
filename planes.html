@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ride - Planes de Suscripción</title>
+
+  <!-- Fuente minimalista (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hoja de estilo -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- HEADER (Igual que en index.html) -->
+  <header class="header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="drivers.html">Socios Conductores</a></li>
+        <li><a href="passengers.html">Pasajeros</a></li>
+        <li><a href="planes.html" class="active-link">Planes</a></li>
+        <li><a href="compra.html" class="btn-buy">Comprar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN DE PLANES -->
+  <section class="section-planes">
+    <div class="container">
+      <h1>Planes de Suscripción Ride</h1>
+      <p class="intro-text">
+        Conoce a detalle cada plan y elige el que mejor se adapte a tu estilo de trabajo.
+      </p>
+
+      <div class="plans-details">
+        <!-- Plan Básico -->
+        <article class="plan-detail">
+          <h2>Plan Básico</h2>
+          <p class="price">$50</p>
+          <ul>
+            <li><strong>Límite de Ganancias:</strong> $600 sin comisión</li>
+            <li>20% de comisión si superas $600</li>
+            <li>Ideal para conductores ocasionales</li>
+          </ul>
+          <a href="compra.html?plan=basic" class="btn-plan">Comprar</a>
+        </article>
+
+        <!-- Plan Intermedio -->
+        <article class="plan-detail">
+          <h2>Plan Intermedio</h2>
+          <p class="price">$100</p>
+          <ul>
+            <li><strong>Límite de Ganancias:</strong> $1200 sin comisión</li>
+            <li>20% de comisión si superas $1200</li>
+            <li>Para conductores que trabajan a medio tiempo</li>
+          </ul>
+          <a href="compra.html?plan=intermediate" class="btn-plan">Comprar</a>
+        </article>
+
+        <!-- Plan Premium -->
+        <article class="plan-detail">
+          <h2>Plan Premium</h2>
+          <p class="price">$150</p>
+          <ul>
+            <li>Ganancias Ilimitadas</li>
+            <li>Sin comisión en tus viajes</li>
+            <li>Soporte Prioritario</li>
+          </ul>
+          <a href="compra.html?plan=premium" class="btn-plan">Comprar</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FAQ -->
+  <section class="section-faq">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+
+      <div class="faq-item">
+        <h3>¿Qué pasa si supero mi límite de ganancias?</h3>
+        <p>
+          Una vez sobrepasas el tope de tu plan (por ejemplo, $600 en el Plan Básico),
+          se aplica una comisión del 20% a los ingresos adicionales de ese mes.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Cómo puedo renovar mi plan?</h3>
+        <p>
+          Al finalizar el mes, puedes comprar un nuevo código de suscripción desde
+          la <a href="compra.html">página de compra</a> o directamente en la app.
+          También puedes pagar en oficinas o por transferencia.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Qué métodos de pago aceptan?</h3>
+        <p>
+          Aceptamos tarjetas de crédito/débito, PayPal, transferencias bancarias y pagos
+          en efectivo en nuestras oficinas. Si compras por la app, usas Google Play.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Igual que en index.html) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Ride - Todos los derechos reservados</p>
+      <nav class="footer-nav">
+        <a href="contacto.html">Contacto</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

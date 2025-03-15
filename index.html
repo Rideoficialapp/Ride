@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ride - Conectando tu Ciudad</title>
+
+  <!-- Fuente minimalista (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tu hoja de estilo principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER SIN LOGO -->
+  <header class="header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="drivers.html">Socios Conductores</a></li>
+        <li><a href="passengers.html">Pasajeros</a></li>
+        <li><a href="planes.html">Planes</a></li>
+        <li><a href="compra.html" class="btn-buy">Comprar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION CON VIDEO -->
+  <section class="hero">
+    <!-- Video de fondo -->
+    <video
+      class="hero-video"
+      src="assets/videos/Videoapp.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
+
+    <!-- Overlay ligero para oscurecer un poco todo el fondo -->
+    <div class="hero-overlay"></div>
+
+    <!-- Contenido centrado con fondo semitransparente -->
+    <div class="hero-content">
+      <h1>Lo mejor de Ride para tu negocio</h1>
+      <p>Convierte tu auto en una fuente de ingresos sin comisiones excesivas.</p>
+      <a href="drivers.html" class="btn-primary">Únete como Conductor</a>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION (Planes) -->
+  <section class="pricing">
+    <h2>Nuestros Planes</h2>
+    <p>Elige el que mejor se adapte a tus necesidades</p>
+
+    <div class="pricing-cards">
+      <!-- Plan Básico -->
+      <div class="card-plan">
+        <h3>Básico</h3>
+        <div class="price">$50</div>
+        <ul>
+          <li><strong>Límite de Ganancias:</strong> $600</li>
+          <li>Sin comisión hasta $600</li>
+          <li>20% de comisión al exceder</li>
+        </ul>
+        <a href="compra.html?plan=basic" class="btn-plan">Comprar</a>
+      </div>
+
+      <!-- Plan Intermedio -->
+      <div class="card-plan">
+        <h3>Intermedio</h3>
+        <div class="price">$100</div>
+        <ul>
+          <li><strong>Límite de Ganancias:</strong> $1200</li>
+          <li>Sin comisión hasta $1200</li>
+          <li>20% de comisión al exceder</li>
+        </ul>
+        <a href="compra.html?plan=intermediate" class="btn-plan">Comprar</a>
+      </div>
+
+      <!-- Plan Premium -->
+      <div class="card-plan">
+        <h3>Premium</h3>
+        <div class="price">$150</div>
+        <ul>
+          <li>Ganancias Ilimitadas</li>
+          <li>Sin comisión</li>
+          <li>Soporte Prioritario</li>
+        </ul>
+        <a href="compra.html?plan=premium" class="btn-plan">Comprar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Ride - Todos los derechos reservados</p>
+      <nav class="footer-nav">
+        <a href="contacto.html">Contacto</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
