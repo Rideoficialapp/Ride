@@ -1,0 +1,639 @@
+/* ----------------------------------------------------
+   RESET & GENERAL
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----------------------------------------------------
+   HEADER (APLICABLE A TODAS LAS PÁGINAS)
+---------------------------------------------------- */
+header.header {
+  background-color: #000; /* Encabezado negro */
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Sin logo, nav a la derecha */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Botón de compra en header */
+.btn-buy {
+  background-color: #fff;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* Link activo subrayado */
+.nav-links .active-link {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------------------
+   INDEX (VIDEO HERO, PRICING)
+---------------------------------------------------- */
+/* HERO SECTION (INDEX) - VIDEO DE FONDO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Ajusta la altura de la sección héroe */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rellenar contenedor sin distorsionar */
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3); /* Overlay tenue */
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute; /* Para centrar completamente */
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+
+  /* Fondo semitransparente para el texto */
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 600px; /* Limitar ancho del texto */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* PRICING (INDEX) */
+.pricing {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.pricing h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.pricing p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card-plan {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.card-plan h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #000;
+}
+
+.card-plan .price {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+.card-plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.card-plan ul li {
+  margin: 5px 0;
+  color: #333;
+}
+
+.btn-plan {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* ----------------------------------------------------
+   PLANES DETALLADOS (planes.html)
+---------------------------------------------------- */
+.section-planes {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-planes .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-planes h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.plans-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.plan-detail {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  width: 280px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.plan-detail h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #000;
+}
+
+.plan-detail .price {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #000;
+  font-weight: bold;
+}
+
+.plan-detail ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan-detail ul li {
+  margin: 5px 0;
+  color: #333;
+}
+
+.plan-detail .btn-plan {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* FAQ (planes.html) */
+.section-faq {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.section-faq .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-faq h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ----------------------------------------------------
+   DRIVERS (drivers.html)
+---------------------------------------------------- */
+.drivers-hero {
+  background: #f2f2f2;
+  padding: 80px 20px;
+  text-align: center;
+}
+.drivers-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.drivers-hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.drivers-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Steps (Pasos) */
+.drivers-steps {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+.drivers-steps .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.drivers-steps h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.steps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.step {
+  background: #f9f9f9;
+  border-radius: 6px;
+  width: 250px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #000;
+}
+
+/* Beneficios Conductores */
+.drivers-benefits {
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+.drivers-benefits .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.drivers-benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.benefit {
+  background: #f9f9f9;
+  border-radius: 6px;
+  width: 270px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.benefit h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* CTA Final Conductores */
+.drivers-cta {
+  padding: 60px 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+.drivers-cta .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.drivers-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.drivers-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* ----------------------------------------------------
+   PASSENGERS (passengers.html)
+---------------------------------------------------- */
+/* Sección Héroe Pasajeros */
+.passengers-hero {
+  background-color: #f2f2f2;
+  padding: 80px 20px;
+  text-align: center;
+}
+.container-hero {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.passengers-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.passengers-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Beneficios Pasajeros */
+.passengers-benefits {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+.passengers-benefits .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.passengers-benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.benefit {
+  background: #f9f9f9;
+  border-radius: 6px;
+  width: 270px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.benefit h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* Métodos de Pago Pasajeros */
+.passengers-payments {
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+.passengers-payments .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.passengers-payments h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.payments-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.payment-method {
+  background: #f9f9f9;
+  border-radius: 6px;
+  width: 320px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.payment-method h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #000;
+}
+
+/* Pasos App Pasajero */
+.passengers-steps {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+.passengers-steps .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.passengers-steps h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.steps-list {
+  list-style: decimal;
+  margin-left: 20px;
+  line-height: 1.6;
+}
+.steps-list li {
+  margin-bottom: 15px;
+}
+
+/* CTA Final Pasajeros */
+.passengers-cta {
+  padding: 60px 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+.passengers-cta .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.passengers-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.passengers-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* ----------------------------------------------------
+   COMPRA (compra.html)
+---------------------------------------------------- */
+.purchase-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.purchase-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.purchase-section h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.purchase-section p {
+  color: #666;
+  margin-bottom: 30px;
+}
+.purchase-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: left;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-purchase {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Resumen de Compra (opcional) */
+.purchase-summary {
+  padding: 40px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+.purchase-summary .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.purchase-summary h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.purchase-summary p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ----------------------------------------------------
+   FOOTER (APLICABLE A TODAS LAS PÁGINAS)
+---------------------------------------------------- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-nav {
+  margin-top: 10px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
