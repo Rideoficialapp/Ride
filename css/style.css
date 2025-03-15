@@ -19,7 +19,7 @@ a {
 }
 
 /* ----------------------------------------------------
-   HEADER
+   HEADER (APLICABLE A TODAS LAS PÁGINAS)
 ---------------------------------------------------- */
 header.header {
   background-color: #000; /* Encabezado negro */
@@ -29,7 +29,7 @@ header.header {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Sitúa el menú a la derecha en desktop */
+  justify-content: flex-end; /* Menú a la derecha en escritorio */
 }
 
 .nav-links {
@@ -43,10 +43,10 @@ header.header {
   font-weight: 500;
 }
 
-/* Botón de compra en header */
+/* Botón de compra (ahora fondo negro, texto blanco) */
 .btn-buy {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   padding: 8px 12px;
   border-radius: 4px;
 }
@@ -63,7 +63,7 @@ header.header {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 60vh; /* Ajuste en lugar de height fija */
+  min-height: 60vh; /* En lugar de height fija */
   overflow: hidden;
 }
 
@@ -101,14 +101,17 @@ header.header {
   max-width: 600px;
 }
 
+/* Ajustes para hero: armonía */
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  line-height: 1.2;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 20px;
+  line-height: 1.4;
 }
 
 .btn-primary {
@@ -125,24 +128,20 @@ header.header {
   padding: 60px 20px;
   text-align: center;
 }
-
 .pricing h2 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
 .pricing p {
   color: #666;
   margin-bottom: 40px;
 }
-
 .pricing-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
-
 .card-plan {
   background-color: #f9f9f9;
   border-radius: 6px;
@@ -151,32 +150,27 @@ header.header {
   text-align: center;
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
 }
-
 .card-plan h3 {
   margin-bottom: 15px;
   font-size: 1.4rem;
   color: #000;
 }
-
 .card-plan .price {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #000;
   font-weight: bold;
 }
-
 .card-plan ul {
   list-style: none;
   padding: 0;
   margin-bottom: 20px;
   text-align: left;
 }
-
 .card-plan ul li {
   margin: 5px 0;
   color: #333;
 }
-
 .btn-plan {
   background-color: #000;
   color: #fff;
@@ -594,7 +588,7 @@ header.header {
 }
 
 /* ----------------------------------------------------
-   FOOTER
+   FOOTER (APLICABLE A TODAS LAS PÁGINAS)
 ---------------------------------------------------- */
 .footer {
   background-color: #000;
@@ -620,7 +614,7 @@ header.header {
 ---------------------------------------------------- */
 /* Tablet y móviles (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Navbar -> Columna en móviles */
+  /* Navbar => Column layout en pantallas pequeñas */
   .navbar {
     flex-wrap: wrap;
     justify-content: center; 
@@ -636,7 +630,7 @@ header.header {
     text-align: center;
   }
 
-  /* Hero */
+  /* Hero => Reduce el min-height */
   .hero {
     min-height: 50vh;
   }
@@ -644,10 +638,10 @@ header.header {
     font-size: 2rem;
   }
   .hero-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
-  /* Pricing, plan details, etc. -> Una columna */
+  /* Pricing, plan details, benefits, etc. => 1 columna */
   .pricing-cards,
   .plans-details,
   .benefits-grid,
