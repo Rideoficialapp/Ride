@@ -19,7 +19,7 @@ a {
 }
 
 /* ----------------------------------------------------
-   HEADER (APLICABLE A TODAS LAS PÁGINAS)
+   HEADER
 ---------------------------------------------------- */
 header.header {
   background-color: #000; /* Encabezado negro */
@@ -29,7 +29,7 @@ header.header {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Sin logo, nav a la derecha */
+  justify-content: flex-end; /* Sitúa el menú a la derecha en desktop */
 }
 
 .nav-links {
@@ -43,6 +43,7 @@ header.header {
   font-weight: 500;
 }
 
+/* Botón de compra en header */
 .btn-buy {
   background-color: #fff;
   color: #000;
@@ -50,6 +51,7 @@ header.header {
   border-radius: 4px;
 }
 
+/* Link activo subrayado */
 .nav-links .active-link {
   text-decoration: underline;
 }
@@ -61,7 +63,7 @@ header.header {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 60vh; /* Reemplaza height fija por min-height */
+  min-height: 60vh; /* Ajuste en lugar de height fija */
   overflow: hidden;
 }
 
@@ -71,7 +73,7 @@ header.header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -93,7 +95,7 @@ header.header {
   z-index: 3;
   text-align: center;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente texto */
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 20px 30px;
   border-radius: 8px;
   max-width: 600px;
@@ -191,30 +193,25 @@ header.header {
   padding: 60px 20px;
   text-align: center;
 }
-
 .section-planes .container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .section-planes h1 {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
 .intro-text {
   color: #666;
   margin-bottom: 40px;
   font-size: 1rem;
 }
-
 .plans-details {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
-
 .plan-detail {
   background-color: #f9f9f9;
   border-radius: 6px;
@@ -224,31 +221,26 @@ header.header {
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
   margin-bottom: 20px;
 }
-
 .plan-detail h2 {
   margin-bottom: 10px;
   font-size: 1.4rem;
   color: #000;
 }
-
 .plan-detail .price {
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #000;
   font-weight: bold;
 }
-
 .plan-detail ul {
   list-style: none;
   padding: 0;
   margin-bottom: 20px;
 }
-
 .plan-detail ul li {
   margin: 5px 0;
   color: #333;
 }
-
 .plan-detail .btn-plan {
   background-color: #000;
   color: #fff;
@@ -264,28 +256,23 @@ header.header {
   background-color: #fff;
   text-align: left;
 }
-
 .section-faq .container {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .section-faq h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   text-align: center;
 }
-
 .faq-item {
   margin-bottom: 20px;
 }
-
 .faq-item h3 {
   font-size: 1.2rem;
   margin-bottom: 5px;
   color: #000;
 }
-
 .faq-item p {
   font-size: 1rem;
   line-height: 1.5;
@@ -607,7 +594,7 @@ header.header {
 }
 
 /* ----------------------------------------------------
-   FOOTER (APLICABLE A TODAS LAS PÁGINAS)
+   FOOTER
 ---------------------------------------------------- */
 .footer {
   background-color: #000;
@@ -619,11 +606,9 @@ header.header {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .footer-nav {
   margin-top: 10px;
 }
-
 .footer-nav a {
   color: #fff;
   text-decoration: none;
@@ -635,9 +620,25 @@ header.header {
 ---------------------------------------------------- */
 /* Tablet y móviles (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Hero -> Ajustar min-height */
+  /* Navbar -> Columna en móviles */
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero */
   .hero {
-    min-height: 50vh; 
+    min-height: 50vh;
   }
   .hero-content h1 {
     font-size: 2rem;
@@ -646,7 +647,7 @@ header.header {
     font-size: 1rem;
   }
 
-  /* Pricing cards, plan details, benefits, etc. -> 1 columna */
+  /* Pricing, plan details, etc. -> Una columna */
   .pricing-cards,
   .plans-details,
   .benefits-grid,
