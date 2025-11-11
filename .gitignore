@@ -1,1 +1,10 @@
+# Clave privada de Firebase (NO subir nunca)
+serviceAccountKey.json
+
+# Dependencias de PHP instaladas con Composer
+vendor/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
 
