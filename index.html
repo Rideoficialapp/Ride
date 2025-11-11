@@ -47,7 +47,7 @@
     <!-- Contenido central -->
     <div class="hero-content">
       <h1>Lo mejor de Ride para tu negocio</h1>
-      <p>Convierte tu auto en una fuente de ingresos sin comisiones excesivas.</p>
+      <p>Convierte tu auto o moto en una fuente de ingresos con planes claros y sin sorpresas.</p>
       <a href="drivers.html" class="btn-primary">Únete como Conductor</a>
     </div>
   </section>
@@ -55,11 +55,14 @@
   <!-- SECCIÓN DE PLANES EN INDEX -->
   <section class="pricing">
     <h2>Nuestros Planes</h2>
-    <p>Elige el que mejor se adapte a tus necesidades</p>
+    <p>Elige tu vehículo y el plan de suscripción que mejor se adapte a cómo quieres ganar con Ride.</p>
 
+    <!-- SUBTÍTULO: PLANES PARA CARRO -->
+    <h3 class="pricing-subtitle">Planes para Conductores con Carro</h3>
     <div class="pricing-cards">
-      <!-- Plan Básico -->
+      <!-- Plan Básico Carro -->
       <div class="card-plan">
+        <span class="tag-vehicle">Carro</span>
         <h3>Básico</h3>
         <div class="price">$50</div>
         <ul>
@@ -67,10 +70,11 @@
           <li>Sin comisión hasta $600</li>
           <li>20% de comisión al exceder</li>
         </ul>
-        <a href="compra.html?plan=basic" class="btn-plan">Comprar</a>
+        <a href="compra.html?vehicle=car&plan=basic" class="btn-plan">Comprar</a>
       </div>
-      <!-- Plan Intermedio -->
+      <!-- Plan Intermedio Carro -->
       <div class="card-plan">
+        <span class="tag-vehicle">Carro</span>
         <h3>Intermedio</h3>
         <div class="price">$100</div>
         <ul>
@@ -78,10 +82,11 @@
           <li>Sin comisión hasta $1200</li>
           <li>20% de comisión al exceder</li>
         </ul>
-        <a href="compra.html?plan=intermediate" class="btn-plan">Comprar</a>
+        <a href="compra.html?vehicle=car&plan=intermediate" class="btn-plan">Comprar</a>
       </div>
-      <!-- Plan Premium -->
+      <!-- Plan Premium Carro -->
       <div class="card-plan">
+        <span class="tag-vehicle">Carro</span>
         <h3>Premium</h3>
         <div class="price">$150</div>
         <ul>
@@ -89,9 +94,57 @@
           <li>Sin comisión</li>
           <li>Soporte Prioritario</li>
         </ul>
-        <a href="compra.html?plan=premium" class="btn-plan">Comprar</a>
+        <a href="compra.html?vehicle=car&plan=premium" class="btn-plan">Comprar</a>
       </div>
     </div>
+
+    <!-- SUBTÍTULO: PLANES PARA MOTO -->
+    <h3 class="pricing-subtitle">Planes para Conductores con Moto</h3>
+    <div class="pricing-cards">
+      <!-- Plan Básico Moto -->
+      <div class="card-plan">
+        <span class="tag-vehicle moto">Moto</span>
+        <h3>Básico</h3>
+        <div class="price">$25</div>
+        <ul>
+          <li><strong>Límite de Ganancias:</strong> $300</li>
+          <li>Sin comisión hasta $300</li>
+          <li>20% de comisión al exceder</li>
+        </ul>
+        <a href="compra.html?vehicle=moto&plan=basic" class="btn-plan">Comprar</a>
+      </div>
+      <!-- Plan Intermedio Moto -->
+      <div class="card-plan">
+        <span class="tag-vehicle moto">Moto</span>
+        <h3>Intermedio</h3>
+        <div class="price">$45</div>
+        <ul>
+          <li><strong>Límite de Ganancias:</strong> $600</li>
+          <li>Sin comisión hasta $600</li>
+          <li>20% de comisión al exceder</li>
+        </ul>
+        <a href="compra.html?vehicle=moto&plan=intermediate" class="btn-plan">Comprar</a>
+      </div>
+      <!-- Plan Premium Moto -->
+      <div class="card-plan">
+        <span class="tag-vehicle moto">Moto</span>
+        <h3>Premium</h3>
+        <div class="price">$60</div>
+        <ul>
+          <li><strong>Límite de Ganancias:</strong> $900</li>
+          <li>Sin comisión hasta $900</li>
+          <li>20% de comisión al exceder</li>
+        </ul>
+        <a href="compra.html?vehicle=moto&plan=premium" class="btn-plan">Comprar</a>
+      </div>
+    </div>
+
+    <!-- MENSAJE GUÍA -->
+    <p class="pricing-help">
+      Al comprar recibirás un <strong>código de activación</strong> según tu vehículo y tu plan.
+      Luego solo debes ingresarlo en la app Ride Driver en la opción
+      <strong>"Ya tengo un código Ride"</strong> para activar tu suscripción.
+    </p>
   </section>
 
   <!-- FOOTER -->
@@ -108,3 +161,4 @@
 
 </body>
 </html>
+
