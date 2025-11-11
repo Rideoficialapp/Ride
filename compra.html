@@ -34,17 +34,40 @@
   <section class="purchase-section">
     <div class="container">
       <h1>Comprar Suscripción Ride</h1>
-      <p>Completa el siguiente formulario para generar tu código de activación.</p>
+      <p>Completa el siguiente formulario para generar tu código de activación según tu vehículo y tu plan.</p>
 
       <div class="purchase-form">
+        <!-- Tipo de Vehículo -->
+        <div class="form-group">
+          <label for="vehicle">¿Con qué vehículo trabajarás?</label>
+          <select id="vehicle" name="vehicle">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="car">Carro</option>
+            <option value="moto">Moto</option>
+          </select>
+        </div>
+
         <!-- Selección de Plan -->
         <div class="form-group">
           <label for="plan">Selecciona tu Plan:</label>
           <select id="plan" name="plan">
-            <option value="basic">Básico ($50 / $600 límite)</option>
-            <option value="intermediate">Intermedio ($100 / $1200 límite)</option>
-            <option value="premium">Premium ($150 / ilimitado)</option>
+            <!-- Planes para Carro -->
+            <optgroup label="Planes para Carro">
+              <option value="CAR-BASIC">Básico Carro ($50 / $600 límite)</option>
+              <option value="CAR-INTERMEDIATE">Intermedio Carro ($100 / $1200 límite)</option>
+              <option value="CAR-PREMIUM">Premium Carro ($150 / Ilimitado)</option>
+            </optgroup>
+
+            <!-- Planes para Moto -->
+            <optgroup label="Planes para Moto">
+              <option value="M-BASIC">Básico Moto ($25 / $300 límite)</option>
+              <option value="M-INTERMEDIATE">Intermedio Moto ($45 / $600 límite)</option>
+              <option value="M-PREMIUM">Premium Moto ($60 / $900 límite)</option>
+            </optgroup>
           </select>
+          <small class="helper-text">
+            El código que recibas quedará ligado al tipo de vehículo y plan que selecciones aquí.
+          </small>
         </div>
 
         <!-- Datos del Comprador -->
@@ -70,16 +93,22 @@
         </div>
 
         <!-- Botón Comprar -->
-        <button type="button" class="btn-purchase">Generar Código</button>
+        <button type="button" class="btn-purchase">
+          Generar Código
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- MENSAJE O RESUMEN (OPCIONAL) -->
+  <!-- MENSAJE O RESUMEN -->
   <section class="purchase-summary">
     <div class="container">
       <h2>¿Ya compraste tu plan?</h2>
-      <p>Ingresa el código de activación en la app de Ride Driver para activar tu suscripción.</p>
+      <p>
+        Revisa tu correo o el comprobante que te entregamos.
+        Ingresa el <strong>código de activación</strong> en la app Ride Driver en la opción
+        <strong>"Ya tengo un código Ride"</strong> para activar tu suscripción.
+      </p>
     </div>
   </section>
 
@@ -94,5 +123,34 @@
       </nav>
     </div>
   </footer>
+
+  <!-- Script simple para leer parámetros y preseleccionar vehículo/plan -->
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const vehicle = params.get('vehicle');
+      const plan = params.get('plan');
+
+      const vehicleSelect = document.getElementById('vehicle');
+      const planSelect = document.getElementById('plan');
+
+      if (vehicle && (vehicle === 'car' || vehicle === 'moto')) {
+        vehicleSelect.value = vehicle;
+      }
+
+      if (plan && vehicle) {
+        // Mapea plan sencillo (basic/intermediate/premium) + tipo vehículo al valor del select
+        const key = (vehicle === 'car' ? 'CAR' : 'M') + '-' + plan.toUpperCase();
+        for (const option of planSelect.options) {
+          if (option.value === key) {
+            planSelect.value = key;
+            break;
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
+
+
