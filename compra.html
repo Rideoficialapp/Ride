@@ -51,7 +51,7 @@
           </select>
         </div>
 
-        <!-- Selección de Plan (filtrado dinámicamente según vehículo) -->
+        <!-- Selección de Plan (filtrado según vehículo) -->
         <div class="form-group">
           <label for="plan">Selecciona tu Plan:</label>
           <select id="plan" name="plan" required disabled>
@@ -127,17 +127,17 @@
           />
         </div>
 
-        <!-- Método de Pago (Pagadito) -->
+        <!-- Método de Pago (visual: Tarjeta, interno: pagadito) -->
         <div class="form-group">
           <label for="payment">Método de Pago:</label>
           <select id="payment" name="payment" required>
-            <option value="pagadito">Pagadito</option>
+            <option value="pagadito">Tarjeta de débito/crédito</option>
           </select>
         </div>
 
         <!-- Botón Comprar -->
         <button type="submit" class="btn-purchase">
-          Ir a pagar y generar mi código Ride
+          Pagar y generar mi código Ride
         </button>
       </form>
     </div>
@@ -172,33 +172,23 @@
     (function () {
       const vehicleSelect = document.getElementById('vehicle');
       const planSelect = document.getElementById('plan');
-      const allPlanOptions = Array.from(planSelect.options).filter(
-        opt => opt.value !== "" // excluir placeholder
-      );
 
       function filtrarPlanesPorVehiculo(vehiculo) {
-        // Reset selección
         planSelect.value = "";
         planSelect.disabled = !vehiculo;
 
-        // Si no hay vehículo seleccionado, mostrar solo placeholder
-        if (!vehiculo) {
-          Array.from(planSelect.options).forEach(opt => {
-            if (opt.value === "") {
-              opt.hidden = false;
-            } else {
-              opt.hidden = true;
-            }
-          });
-          return;
-        }
-
-        // Mostrar solo los que coinciden con el data-vehicle
         Array.from(planSelect.options).forEach(opt => {
           if (opt.value === "") {
             opt.hidden = false;
-            opt.selected = true;
-            opt.textContent = "Selecciona un plan para tu " + (vehiculo === "car" ? "Carro" : "Moto");
+            if (!vehiculo) {
+              opt.selected = true;
+              opt.textContent = "Primero elige tu vehículo";
+            } else {
+              opt.selected = true;
+              opt.textContent =
+                "Selecciona un plan para tu " +
+                (vehiculo === "car" ? "Carro" : "Moto");
+            }
           } else {
             const optVehicle = opt.getAttribute('data-vehicle');
             opt.hidden = optVehicle !== vehiculo;
@@ -206,10 +196,8 @@
         });
       }
 
-      // Cambio manual del usuario
       vehicleSelect.addEventListener('change', function () {
-        const vehiculo = this.value;
-        filtrarPlanesPorVehiculo(vehiculo);
+        filtrarPlanesPorVehiculo(this.value);
       });
 
       // Preselección desde parámetros ?vehicle=car&plan=basic
@@ -222,7 +210,10 @@
         filtrarPlanesPorVehiculo(vehicleParam);
 
         if (planParam) {
-          const key = (vehicleParam === 'car' ? 'CAR' : 'M') + '-' + planParam.toUpperCase();
+          const key =
+            (vehicleParam === 'car' ? 'CAR' : 'M') +
+            '-' +
+            planParam.toUpperCase();
           const match = Array.from(planSelect.options).find(
             opt => opt.value === key && !opt.hidden
           );
@@ -231,13 +222,9 @@
           }
         }
       } else {
-        // Estado inicial: sin vehículo → solo placeholder visible, select deshabilitado
         filtrarPlanesPorVehiculo(null);
       }
     })();
   </script>
 </body>
 </html>
-
-
-
